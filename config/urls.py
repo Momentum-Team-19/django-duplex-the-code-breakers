@@ -1,3 +1,4 @@
+# urls.py
 """
 URL configuration for config project.
 
@@ -15,8 +16,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from flashcards import views
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("", views.homepage, name="homepage"),
+    path("accounts/", include("registration.backends.simple.urls")),
+    path('decks/new', views.create_deck, name='create_deck'),
+    path('card/new', views.create_card, name='create_card'),
+    path('decks/list', views.decks_list, name='list_decks'),
+    path('decks/detail/<int:pk>', views.deck_details, name='deck_details'),
 ]

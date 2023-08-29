@@ -1,0 +1,78 @@
+:root {
+    --clr-light: #acacac;
+    --clr-lighter: #dddddd;
+    --clr-lightest: #ffffff;
+    --clr-dark: #0A1045;
+    --clr-primary: #7d7d7d;
+    --clr-secondary: #f6f6f6;
+    --clr-accent: #008bfd;
+    --clr-accent-lighter: #71aef9;
+    --clr-accent-darker: #1468b6;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+.darkMode {
+    --clr-light: #606470;
+    --clr-lighter: #9296a2;
+    --clr-lightest: #bbbfc7;
+    --clr-dark: #353941;
+    --clr-primary: #90959a;
+    --clr-secondary: #26282b;
+    --clr-accent: #3b50d2;
+    --clr-accent-darker: #293685;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+* {
+    background-color: rgb(194, 194, 199);
+}
+
+.createBox {
+    text-align: center;
+    align-items: center;
+}
+
+.pageName {
+    text-align: center;
+    color: var(--clr-lightest);
+}
+
+.loginBox {
+    color: var(--clr-lightest);
+}
+
+.saveButton {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--clr-accent);
+    color: var(--clr-lightest);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.saveButton:hover {
+    background-color: var(--clr-accent-lighter);
+}
+
+.saveButton:active {
+    animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+    0% {
+        box-shadow: inset 2px 2px 4px rgba(16, 16, 16, 0.1), inset -2px -2px 4px var(--clr-lightest);
+        background-color: var(--clr-accent-darker);
+    }
+
+    100% {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1), inset -5px -5px 8px var(--clr-lightest);
+        background-color: var(--clr-accent);
+    }
+}

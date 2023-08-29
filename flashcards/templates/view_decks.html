@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>View Deck</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="pageName">Choose a Deck</h1>
+    </header>
+
+    <div class="container">
+        {% for deck in decks %}
+        <a href="{% url 'deck_details' deck.pk %}">
+            <div class="detailBox">
+                <h2 class="deckTitle">{{ deck.title }}</h2>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

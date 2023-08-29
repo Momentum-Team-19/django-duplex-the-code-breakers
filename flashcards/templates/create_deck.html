@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>{% if logged_in %}Logout{% else %}Login{% endif %}</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="pageName">Make New Deck of Flashcards</h1>
+    </header>
+
+    <div class="createContainer">
+        <form class="createBox" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="saveButton" type="submit">SAVE</button>
+        </form>
+    </div>
+</body>
+
+</html>

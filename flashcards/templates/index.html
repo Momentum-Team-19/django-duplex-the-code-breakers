@@ -1,0 +1,26 @@
+<!--index.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>home</title>
+</head>
+<header>
+    <h1 class="pageName">flashcards</h1>
+</header>
+
+<body>
+    <a class="indexOption" href="{% url 'create_deck' %}">
+        <div class="indexOptionText">Create New Deck</div>
+    </a>
+    <a class="indexOption" href="{% url 'list_decks' %}">
+        <div class="indexOptionText">View Decks</div>
+    </a>
+</body>
+
+</html>

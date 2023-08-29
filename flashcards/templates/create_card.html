@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>{% if form.instance.pk %}Edit Card{% else %}Create Card{% endif %}</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="pageName">{% if form.instance.pk %}Edit Card{% else %}Create Card{% endif %}</h1>
+    </header>
+
+    <div class="createContainer">
+        <form method='post' class="createBox">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="saveButton" type="submit">SAVE</button>
+        </form>
+    </div>
+</body>
+
+</html>

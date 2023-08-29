@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>Deck Details</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="pageName">Deck Details</h1>
+    </header>
+
+    <div class="detailsContainer">
+        <div class="detailsBox">
+            <h1>Deck: {{ deck.title }}</h1>
+            <p>{{ deck.description }}</p>
+        </div>
+    </div>
+    <a href="{% url 'create_card' %}">
+        <h3>New Card</h3>
+    </a>
+</body>
+
+</html>
