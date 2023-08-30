@@ -31,11 +31,14 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
-            <a class="footerOption" href="{% url 'create_card' %}">
+            <a class="footerOption" href="{% url 'create_card' deck.pk %}">
                 <p class="footerOptionText">New Card</p>
             </a>
             <a class="footerOption" href="{% url 'list_decks' %}">
                 <p class="footerOptionText">Edit Deck(broken)</p>
+            </a>
+            <a class="footerOption" href="{% url 'deck_delete' deck.pk %}">
+                <p class="footerOptionText">Delete Deck</p>
             </a>
             <a class="footerOption" href="{% url 'list_cards' deck.pk %}">
                 <p class="footerOptionText">View Cards</p>

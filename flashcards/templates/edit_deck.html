@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
-    <title>{% if logged_in %}Logout{% else %}Login{% endif %}</title>
+    <title>{% if form.instance.pk %}Edit Deck{% else %}New Deck{% endif %}</title>
 </head>
 
 <body>
     <header>
-        <h1 class="pageName">Make New Deck of Flashcards</h1>
+        <h1 class="pageName">{% if form.instance.pk %}Edit Deck{% else %}New Deck{% endif %}</h1>
     </header>
 
     <div class="createContainer">

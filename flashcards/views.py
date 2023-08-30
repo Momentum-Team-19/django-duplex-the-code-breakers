@@ -23,19 +23,20 @@ def create_deck(request):
             return redirect('list_decks')
     else:
         form = DeckForm()
-    return render(request, "create_deck.html", {'form': form})
+    return render(request, "edit_deck.html", {'form': form})
 
 
 @login_required
-def create_card(request):
+def create_card(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
         form = CardForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('homepage')
+            return redirect('deck_details', pk=deck.pk)
     else:
         form = CardForm()
-    return render(request, "create_card.html", {'form': form})
+    return render(request, "edit_card.html", {'form': form})
 
 
 @login_required
@@ -64,7 +65,7 @@ def deck_details(request, pk):
 @login_required
 def cards_list(request, pk):
     # deck = get_object_or_404(Deck, pk=pk)
-    cards = Card.objects.all()
+    cards = Card.objects.filter(Deck, pk=pk)
 
     return render(request, 'view_cards.html', {'cards': cards})
 
@@ -74,4 +75,23 @@ def card_details(request, pk):
     card = get_object_or_404(Card, pk=pk)
 
     return render(request, 'card_details.html', {'card': card})
-    
+
+
+@login_required
+def delete_card(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+
+    if request.method == 'POST':
+        card.delete()
+        return redirect('view_cards', pk=card.deck.id)
+    return render(request, 'confirm_delete.html', {'card': card})
+
+
+@login_required
+def delete_deck(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+
+    if request.method == 'POST':
+        deck.delete()
+        return redirect('view_decks')
+    return render(request, 'confirm_delete.html', {'deck': deck})
