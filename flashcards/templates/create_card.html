@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
     <title>{% if form.instance.pk %}Edit Card{% else %}Create Card{% endif %}</title>
 </head>
@@ -21,6 +22,17 @@
             {{ form.as_p }}
             <button class="saveButton" type="submit">SAVE</button>
         </form>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <p class="footerOptionText">Cancel</p>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <p class="footerOptionText">Home</p>
+            </a>
+        </div>
     </div>
 </body>
 

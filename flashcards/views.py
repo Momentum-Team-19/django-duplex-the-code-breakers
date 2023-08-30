@@ -20,7 +20,7 @@ def create_deck(request):
             deck = form.save(commit=False)
             deck.user = request.user
             deck.save()
-            return redirect('homepage')
+            return redirect('list_decks')
     else:
         form = DeckForm()
     return render(request, "create_deck.html", {'form': form})
@@ -63,7 +63,7 @@ def deck_details(request, pk):
 
 @login_required
 def cards_list(request, pk):
-    deck = get_object_or_404(Deck, pk=pk)
+    # deck = get_object_or_404(Deck, pk=pk)
     cards = Card.objects.all()
 
     return render(request, 'view_cards.html', {'cards': cards})
@@ -74,3 +74,4 @@ def card_details(request, pk):
     card = get_object_or_404(Card, pk=pk)
 
     return render(request, 'card_details.html', {'card': card})
+    

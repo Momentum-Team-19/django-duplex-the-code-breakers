@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <title>home</title>
 </head>
 <header>
@@ -15,12 +16,31 @@
 </header>
 
 <body>
-    <a class="indexOption" href="{% url 'create_deck' %}">
-        <div class="indexOptionText">Create New Deck</div>
-    </a>
-    <a class="indexOption" href="{% url 'list_decks' %}">
-        <div class="indexOptionText">View Decks</div>
-    </a>
+    <div class="container">
+        <a class="indexOption" href="{% url 'list_decks' %}">
+            <p class="indexOptionText">Decks</p>
+        </a>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <!-- <a class="homeOption" href="accounts/login">
+                <div class="homeOptionText">Login</div>
+            </a>
+            <a class="homeOption" href="accounts/logout">
+                <div class="homeOptionText">Logout</div>
+            </a> -->
+            {% if user.is_authenticated %}
+            <a class="footerOption" href="accounts/logout">
+                <div class="footerOptionText">Logout</div>
+            </a>
+            {% else %}
+            <a class="footerOption" href="accounts/login">
+                <div class="footerOptionText">Login</div>
+            </a>
+            {% endif %}
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,76 @@
+.deckBox:hover {
+    background: linear-gradient(140deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.deckBox:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+        inset -2px -2px 4px var(--clr-lightest);
+    background-color: #f9f9f9;
+    transform: translateY(1px);
+    transition: box-shadow 0.1s, background-color 0.1s, transform 0.1s;
+}
+
+.cardBox:hover {
+    background: linear-gradient(140deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.cardBox:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+        inset -2px -2px 4px var(--clr-lightest);
+    background-color: #f9f9f9;
+    transform: translateY(1px);
+    transition: box-shadow 0.1s, background-color 0.1s, transform 0.1s;
+}
+
+.indexOption:hover {
+    background: linear-gradient(140deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.indexOption:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+        inset -2px -2px 4px var(--clr-lightest);
+    background-color: #f9f9f9;
+    transform: translateY(1px);
+    transition: box-shadow 0.1s, background-color 0.1s, transform 0.1s;
+}
+
+.saveButton:hover {
+    background-color: #0056b3;
+}
+
+.saveButton:active {
+    animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+    0% {
+        box-shadow: inset 2px 2px 4px rgba(16, 16, 16, 0.1), inset -2px -2px 4px var(--clr-lightest);
+        background-color: var(--clr-accent-darker);
+    }
+
+    100% {
+        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1), inset -5px -5px 8px var(--clr-lightest);
+        background-color: var(--clr-accent);
+    }
+}
+
+.footerOption:hover {
+    transform: translateY(-2px);
+    transform: scale(120%);
+    transition: transform 0.2s;
+}
+
+.footerOption:active {
+    transform: translateY(2px);
+    transform: scale(85%);
+    transition: transform 0.2s;
+}

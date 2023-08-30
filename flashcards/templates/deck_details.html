@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
     <title>Deck Details</title>
 </head>
@@ -17,24 +18,33 @@
 
     <div class="detailsContainer">
         <div class="detailsBox">
-            <h1>Deck: {{ deck.title }}</h1>
-            <p>{{ deck.description }}</p>
+            <div class="columnBox">
+                <div class="titleBox">
+                    <p class="titleText">{{ deck.title }}</p>
+                </div>
+                <div class="descBox">
+                    <p class="descText">{{ deck.description }}</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="footerContainer">
         <div class="footerOptions">
-            <a href="{% url 'create_card' %}">
-                <h3>New Card</h3>
+            <a class="footerOption" href="{% url 'create_card' %}">
+                <p class="footerOptionText">New Card</p>
             </a>
-            <a class="indexOption" href="{% url 'list_cards' deck.pk %}">
-                <div class="indexOptionText">View Cards</div>
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <p class="footerOptionText">Edit Deck(broken)</p>
             </a>
-            <a class="indexOption" href="{% url 'list_decks' %}">
-                <div class="indexOptionText">View Decks</div>
+            <a class="footerOption" href="{% url 'list_cards' deck.pk %}">
+                <p class="footerOptionText">View Cards</p>
+            </a>
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <p class="footerOptionText">View Decks</p>
             </a>
             <a class="footerOption" href="{% url 'homepage' %}">
-                <div class="footerText">Home</div>
+                <p class="footerOptionText">Home</p>
             </a>
         </div>
     </div>

@@ -1,11 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Assistant:400,700|Playfair+Display:900");
+
 :root {
+    --clr-header: #707276;
     --clr-light: #acacac;
-    --clr-lighter: #dddddd;
+    --clr-lighter: #dcdcdc;
     --clr-lightest: #ffffff;
     --clr-dark: #0A1045;
-    --clr-primary: #7d7d7d;
+    --clr-primary: #c9c9c9;
     --clr-secondary: #f6f6f6;
+
+    --clr-text1: #333333;
+    --clr-text2: #4f4f4f;
+    --clr-text3: #6a6a6a;
+    --clr-text4: #8f8f8f;
+
     --clr-accent: #008bfd;
+    --clr-break: #9e9da4;
     --clr-accent-lighter: #71aef9;
     --clr-accent-darker: #1468b6;
 
@@ -13,68 +23,219 @@
     --background: var(--clr-dark);
 }
 
-.darkMode {
-    --clr-light: #606470;
-    --clr-lighter: #9296a2;
-    --clr-lightest: #bbbfc7;
-    --clr-dark: #353941;
-    --clr-primary: #90959a;
-    --clr-secondary: #26282b;
-    --clr-accent: #3b50d2;
-    --clr-accent-darker: #293685;
-
-    --foreground: var(--clr-light);
-    --background: var(--clr-dark);
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-* {
-    background-color: rgb(194, 194, 199);
+body {
+    background-color: var(--clr-lighter);
+}
+
+header {
+    padding: 30px;
+    background-color: var(--clr-header);
+    color: var(--clr-dark);
+    font-size: 30;
+    border-bottom: 3px solid var(--clr-break);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.createContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .createBox {
     text-align: center;
     align-items: center;
-}
-
-.pageName {
-    text-align: center;
-    color: var(--clr-lightest);
-}
-
-.loginBox {
-    color: var(--clr-lightest);
+    background-color: var(--clr-primary);
+    border-radius: 5%;
+    padding: 2%;
+    margin: 8px;
+    width: 30%;
+    min-width: 228px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: var(--clr-dark);
 }
 
 .saveButton {
     height: 40px;
-    padding: 10px 20px;
+    padding: 10px 25px;
     font-size: 16px;
     background-color: var(--clr-accent);
     color: var(--clr-lightest);
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.saveButton:hover {
-    background-color: var(--clr-accent-lighter);
+.albumEdit {
+    box-shadow: 1px 1px 3px #00000020, -1px -1px 3px var(--clr-lightest);
+    background: linear-gradient(140deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.1));
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 5%;
+    padding: 2%;
+    margin: 8px;
+    width: 30%;
+    min-width: 228px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: var(--clr-dark);
 }
 
-.saveButton:active {
-    animation: clickEffect 0.3s ease;
+.pageName {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    color: var(--clr-lightest);
+    cursor: default;
 }
 
-@keyframes clickEffect {
-    0% {
-        box-shadow: inset 2px 2px 4px rgba(16, 16, 16, 0.1), inset -2px -2px 4px var(--clr-lightest);
-        background-color: var(--clr-accent-darker);
-    }
+.loginBox {
+    color: var(--clr-lightest);
+}
 
-    100% {
-        box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1), inset -5px -5px 8px var(--clr-lightest);
-        background-color: var(--clr-accent);
-    }
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.container80 {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.indexOption {
+    background: var(--clr-primary);
+    display: column;
+    border-radius: 10%;
+    padding: 2%;
+    margin: 8px;
+    text-decoration: none;
+    width: 20%;
+}
+
+.indexOptionText {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 125%;
+}
+
+.deckBox {
+    text-decoration: none;
+    width: 20%;
+    background-color: var(--clr-primary);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+}
+
+.detailBox {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.deckTitle {
+    font-family: "Arial", sans-serif;
+    font-size: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.detailsContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+}
+
+.detailsBox {
+    width: 42%;
+    background-color: var(--clr-primary);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+}
+
+.columnBox {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.titleBox {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.titleText {
+    font-family: "Arial", sans-serif;
+    font-size: 140%;
+    font-weight: bold;
+    color: var(--clr-text1);
+}
+
+.descBox {
+    border-top: 1px solid var(--clr-break);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    /* width: 50%; */
+}
+
+.descText {
+    font-family: "Arial", sans-serif;
+    font-size: 95%;
+    color: var(--clr-text2);
+    text-align: center;
+}
+
+.cardBox {
+    text-decoration: none;
+    width: 35%;
+    background-color: var(--clr-primary);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+}
+
+.cardDetailBox {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.cardPrompt {
+    font-family: "Arial", sans-serif;
+    font-size: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .footerContainer {
@@ -84,6 +245,7 @@
 }
 
 .footerOptions {
+    font-family: "Arial", sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -97,22 +259,8 @@
 .footerOption {
     border-radius: 5%;
     text-decoration: none;
-    padding: 5px;
     width: 22%;
-    ;
     margin: 1%;
-}
-
-.footerOption:hover {
-    transform: translateY(-2px);
-    transform: scale(110%);
-    transition: transform 0.2s;
-}
-
-.footerOption:active {
-    transform: translateY(2px);
-    transform: scale(85%);
-    transition: transform 0.2s;
 }
 
 .footerText {

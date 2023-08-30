@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
     <title>Login</title>
 </head>
@@ -16,13 +17,15 @@
     </header>
 
     <div class="container">
-        {% for card in cards %}
-        <a href="{% url 'card_details' card.pk %}">
-            <div class="cardBox">
-                <h2 class="deckTitle">{{ card.title }}</h2>
-            </div>
-        </a>
-        {% endfor %}
+        <div class="container80">
+            {% for card in cards %}
+            <a class="cardBox" href="{% url 'card_details' card.pk %}">
+                <div class="cardDetailBox">
+                    <p class="cardPrompt">{{ card.prompt }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
 
     <div class="footerContainer">
@@ -30,8 +33,8 @@
             <a class="footerOption" href="{% url 'homepage' %}">
                 <div class="footerText">Home</div>
             </a>
-            <a class="indexOption" href="{% url 'list_decks' %}">
-                <div class="indexOptionText">View Decks</div>
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <div class="footerText">View Decks</div>
             </a>
         </div>
     </div>

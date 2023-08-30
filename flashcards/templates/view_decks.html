@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
     <title>View Deck</title>
 </head>
@@ -16,13 +17,26 @@
     </header>
 
     <div class="container">
-        {% for deck in decks %}
-        <a href="{% url 'deck_details' deck.pk %}">
-            <div class="detailBox">
-                <h2 class="deckTitle">{{ deck.title }}</h2>
-            </div>
-        </a>
-        {% endfor %}
+        <div class="container80">
+            {% for deck in decks %}
+            <a class="deckBox" href="{% url 'deck_details' deck.pk %}">
+                <div class="detailBox">
+                    <p class="deckTitle">{{ deck.title }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'create_deck' %}">
+                <div class="footerText">New Deck</div>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Home</div>
+            </a>
+        </div>
     </div>
 </body>
 
