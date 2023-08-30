@@ -27,6 +27,21 @@ def create_deck(request):
 
 
 @login_required
+def edit_deck(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+
+    if request.method == 'POST':
+        form = DeckForm(request.POST, instance=deck)
+        if form.is_valid():
+            form.save()
+            return redirect('deck_details', pk=deck.pk)
+    else:
+        form = DeckForm(instance=deck)
+
+    return render(request, 'edit_deck.html', {'form': form})
+
+
+@login_required
 def create_card(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
@@ -39,6 +54,22 @@ def create_card(request, pk):
     else:
         form = CardForm()
     return render(request, "edit_card.html", {'form': form})
+
+
+@login_required
+def edit_card(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+    deck_id = card.deck_id
+
+    if request.method == 'POST':
+        form = CardForm(request.POST, instance=card)
+        if form.is_valid():
+            form.save()
+            return redirect('deck_details', pk=deck_id)
+    else:
+        form = CardForm(instance=card)
+
+    return render(request, 'edit_card.html', {'form': form})
 
 
 @login_required
@@ -120,4 +151,3 @@ def delete_deck(request, pk):
         deck.delete()
         return redirect('list_decks')
     return render(request, 'confirm_delete.html', {'deck': deck})
-

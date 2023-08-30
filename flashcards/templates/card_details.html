@@ -22,6 +22,9 @@
                 <div class="titleBox">
                     <p class="titleText">{{ card.prompt }}</p>
                 </div>
+                <div class="hintBox">
+                    <p class="hintText">*{{ card.hint }}*</p>
+                </div>
                 <div class="descBox">
                     <p class="descText">{{ card.answer }}</p>
                 </div>
@@ -31,8 +34,8 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
-            <a class="footerOption" href="{% url 'list_decks' %}">
-                <p class="footerOptionText">Edit Card(broken)</p>
+            <a class="footerOption" href="{% url 'edit_card' card.pk %}">
+                <p class="footerOptionText">Edit Card</p>
             </a>
             <a class="footerOption" href="{% url 'card_delete' card.pk %}">
                 <p class="footerOptionText">Delete Card</p>

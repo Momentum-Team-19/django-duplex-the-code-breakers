@@ -7,7 +7,7 @@ from .models import Deck, Card
 class CardForm(forms.ModelForm):
     class Meta:
         model = Card
-        fields = ['prompt', 'answer']
+        fields = ['prompt', 'hint', 'answer']
 
 
 class DeckForm(forms.ModelForm):

@@ -12,8 +12,9 @@ class User(AbstractUser):
 
 class Deck(models.Model):
     title = models.CharField(max_length=200)
-    desc = models.CharField(max_length=200)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="decks")
+    desc = models.CharField(max_length=200, blank=True, null=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="decks")
     created_date = models.DateTimeField(default=timezone.now)
 
     def archive(self):
@@ -25,8 +26,10 @@ class Deck(models.Model):
 
 
 class Card(models.Model):
-    deck = models.ForeignKey(Deck, on_delete=models.CASCADE, related_name="cards")
+    deck = models.ForeignKey(
+        Deck, on_delete=models.CASCADE, related_name="cards")
     prompt = models.CharField(max_length=200)
+    hint = models.CharField(max_length=200, blank=True, null=True)
     answer = models.CharField(max_length=200)
 
     def __str__(self):

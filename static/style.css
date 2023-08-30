@@ -196,6 +196,19 @@ header {
     color: var(--clr-text1);
 }
 
+.hintBox {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.hintText {
+    font-family: "Arial", sans-serif;
+    font-size: 90%;
+    font-style: italic;
+    color: var(--clr-text2);
+}
+
 .descBox {
     border-top: 1px solid var(--clr-break);
     padding-top: 5px;
@@ -207,7 +220,7 @@ header {
 
 .descText {
     font-family: "Arial", sans-serif;
-    font-size: 95%;
+    font-size: 105%;
     color: var(--clr-text2);
     text-align: center;
 }

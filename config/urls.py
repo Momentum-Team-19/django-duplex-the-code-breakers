@@ -32,4 +32,6 @@ urlpatterns = [
     path('card/detail/<int:pk>', views.card_details, name='card_details'),
     path('deck/delete/<int:pk>', views.delete_deck, name='deck_delete'),
     path('card/delete/<int:pk>', views.delete_card, name='card_delete'),
+    path('deck/edit/<int:pk>', views.edit_deck, name='edit_deck'),
+    path('card/edit/<int:pk>', views.edit_card, name='edit_card'),
 ]
