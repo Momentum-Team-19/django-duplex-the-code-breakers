@@ -40,6 +40,9 @@
             <a class="footerOption" href="{% url 'card_delete' card.pk %}">
                 <p class="footerOptionText">Delete Card</p>
             </a>
+            <a class="footerOption" href="{% url 'deck_details' deck_id %}">
+                <p class="footerOptionText">Back to Deck</p>
+            </a>
             <a class="footerOption" href="{% url 'list_decks' %}">
                 <p class="footerOptionText">All Decks</p>
             </a>

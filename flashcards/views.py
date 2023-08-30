@@ -129,7 +129,12 @@ def card_details(request, pk):
     card = get_object_or_404(Card, pk=pk)
     deck_id = card.deck_id
 
-    return render(request, 'card_details.html', {'card': card, 'deck_id': deck_id})
+    context = {
+        'card': card,
+        'deck_id': deck_id,
+    }
+
+    return render(request, 'card_details.html', context)
 
 
 @login_required
