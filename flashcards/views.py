@@ -32,7 +32,9 @@ def create_card(request, pk):
     if request.method == 'POST':
         form = CardForm(request.POST)
         if form.is_valid():
-            form.save()
+            card = form.save(commit=False)
+            card.deck = deck
+            card.save()
             return redirect('deck_details', pk=deck.pk)
     else:
         form = CardForm()
@@ -47,7 +49,7 @@ def decks_list(request):
         'decks': decks,
         'user': user,
     }
-    return render(request, 'view_decks.html', context)
+    return render(request, 'decks_list.html', context)
 
 
 @login_required
@@ -68,26 +70,28 @@ def cards_list(request, pk):
     cards = Card.objects.filter(deck=deck)
 
     if cards.exists():
-        return render(request, 'view_cards.html', {'cards': cards})
+        return render(request, 'cards_list.html', {'cards': cards, 'deck': deck})
     else:
         message = "No cards :("
-        return render(request, 'cards_list.html', {'message': message})
+        return render(request, 'cards_list.html', {'message': message, 'deck': deck})
 
 
 @login_required
 def card_details(request, pk):
     card = get_object_or_404(Card, pk=pk)
+    deck_id = card.deck_id
 
-    return render(request, 'card_details.html', {'card': card})
+    return render(request, 'card_details.html', {'card': card, 'deck_id': deck_id})
 
 
 @login_required
 def delete_card(request, pk):
     card = get_object_or_404(Card, pk=pk)
+    deck_id = card.deck_id
 
     if request.method == 'POST':
         card.delete()
-        return redirect('view_cards', pk=card.deck.id)
+        return redirect('list_cards', pk=deck_id)
     return render(request, 'confirm_delete.html', {'card': card})
 
 

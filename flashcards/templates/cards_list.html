@@ -34,6 +34,9 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
+            <a class="footerOption" href="{% url 'create_card' deck.pk %}">
+                <p class="footerOptionText">New Card</p>
+            </a>
             <a class="footerOption" href="{% url 'homepage' %}">
                 <div class="footerText">Home</div>
             </a>
