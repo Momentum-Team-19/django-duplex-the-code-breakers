@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="pageName">Cards</h1>
+    </header>
+
+    <div class="container">
+        {% for card in cards %}
+        <a href="{% url 'card_details' card.pk %}">
+            <div class="cardBox">
+                <h2 class="deckTitle">{{ card.title }}</h2>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Home</div>
+            </a>
+            <a class="indexOption" href="{% url 'list_decks' %}">
+                <div class="indexOptionText">View Decks</div>
+            </a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

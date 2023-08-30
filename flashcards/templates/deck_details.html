@@ -21,9 +21,23 @@
             <p>{{ deck.description }}</p>
         </div>
     </div>
-    <a href="{% url 'create_card' %}">
-        <h3>New Card</h3>
-    </a>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a href="{% url 'create_card' %}">
+                <h3>New Card</h3>
+            </a>
+            <a class="indexOption" href="{% url 'list_cards' deck.pk %}">
+                <div class="indexOptionText">View Cards</div>
+            </a>
+            <a class="indexOption" href="{% url 'list_decks' %}">
+                <div class="indexOptionText">View Decks</div>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Home</div>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
