@@ -64,10 +64,14 @@ def deck_details(request, pk):
 
 @login_required
 def cards_list(request, pk):
-    # deck = get_object_or_404(Deck, pk=pk)
-    cards = Card.objects.filter(Deck, pk=pk)
+    deck = get_object_or_404(Deck, pk=pk)
+    cards = Card.objects.filter(deck=deck)
 
-    return render(request, 'view_cards.html', {'cards': cards})
+    if cards.exists():
+        return render(request, 'view_cards.html', {'cards': cards})
+    else:
+        message = "No cards :("
+        return render(request, 'cards_list.html', {'message': message})
 
 
 @login_required
@@ -93,5 +97,5 @@ def delete_deck(request, pk):
 
     if request.method == 'POST':
         deck.delete()
-        return redirect('view_decks')
+        return redirect('list_decks')
     return render(request, 'confirm_delete.html', {'deck': deck})

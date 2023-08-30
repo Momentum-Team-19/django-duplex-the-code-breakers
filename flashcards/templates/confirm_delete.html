@@ -18,9 +18,9 @@
 
     <div class="container">
         <div class="deckEdit">
-            <p class="deleteText">Confirm Delete?</p>
             <form class="deleteConfirm" method="post">
                 {% csrf_token %}
+                <p class=" deleteText">Confirm Delete?</p>
                 <button class="confirmButton" type="submit">Confirm</button>
             </form>
         </div>

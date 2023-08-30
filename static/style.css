@@ -238,6 +238,12 @@ header {
     text-overflow: ellipsis;
 }
 
+.noCardsMessage {
+    font-family: "Arial", sans-serif;
+    font-size: 100%;
+    color: var(--clr-text2);
+}
+
 .footerContainer {
     display: flex;
     justify-content: center;

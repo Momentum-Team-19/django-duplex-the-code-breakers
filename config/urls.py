@@ -30,5 +30,5 @@ urlpatterns = [
     path('deck/detail/<int:pk>', views.deck_details, name='deck_details'),
     path('cards/list/<int:pk>', views.cards_list, name='list_cards'),
     path('card/detail/<int:pk>', views.card_details, name='card_details'),
-    path('deck/delete/<int:pk>', views.deck_details, name='deck_delete'),
+    path('deck/delete/<int:pk>', views.delete_deck, name='deck_delete'),
 ]
