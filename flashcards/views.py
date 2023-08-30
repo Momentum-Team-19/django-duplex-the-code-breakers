@@ -120,3 +120,4 @@ def delete_deck(request, pk):
         deck.delete()
         return redirect('list_decks')
     return render(request, 'confirm_delete.html', {'deck': deck})
+

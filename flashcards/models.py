@@ -12,7 +12,7 @@ class User(AbstractUser):
 
 class Deck(models.Model):
     title = models.CharField(max_length=200)
-    description = models.CharField(max_length=200)
+    desc = models.CharField(max_length=200)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="decks")
     created_date = models.DateTimeField(default=timezone.now)
 

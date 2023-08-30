@@ -13,4 +13,4 @@ class CardForm(forms.ModelForm):
 class DeckForm(forms.ModelForm):
     class Meta:
         model = Deck
-        fields = ['title', 'description']
+        fields = ['title', 'desc']
