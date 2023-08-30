@@ -45,11 +45,20 @@ def create_card(request, pk):
 def decks_list(request):
     decks = Deck.objects.filter(user=request.user)
     user = request.user
-    context = {
-        'decks': decks,
-        'user': user,
-    }
-    return render(request, 'decks_list.html', context)
+
+    if decks.exists():
+        context = {
+            'decks': decks,
+            'user': user,
+        }
+        return render(request, 'decks_list.html', context)
+    else:
+        message = "No decks :("
+        context = {
+            'message': message,
+            'user': user,
+        }
+        return render(request, 'decks_list.html', context)
 
 
 @login_required
@@ -70,10 +79,18 @@ def cards_list(request, pk):
     cards = Card.objects.filter(deck=deck)
 
     if cards.exists():
-        return render(request, 'cards_list.html', {'cards': cards, 'deck': deck})
+        context = {
+            'cards': cards,
+            'deck': deck,
+        }
+        return render(request, 'cards_list.html', context)
     else:
         message = "No cards :("
-        return render(request, 'cards_list.html', {'message': message, 'deck': deck})
+        context = {
+            'message': message,
+            'deck': deck,
+        }
+        return render(request, 'cards_list.html', context)
 
 
 @login_required

@@ -18,6 +18,7 @@
 
     <div class="container">
         <div class="container80">
+            {% if decks %}
             {% for deck in decks %}
             <a class="deckBox" href="{% url 'deck_details' deck.pk %}">
                 <div class="detailBox">
@@ -25,6 +26,9 @@
                 </div>
             </a>
             {% endfor %}
+            {% else %}
+            <p class="noneMessage">{{ message }}</p>
+            {% endif %}
         </div>
     </div>
 
