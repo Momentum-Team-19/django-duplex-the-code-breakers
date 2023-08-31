@@ -5,6 +5,8 @@ from .models import Deck, Card
 from .forms import DeckForm, CardForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from random import shuffle
+import random as rand
 
 
 # Create your views here.
@@ -156,3 +158,32 @@ def delete_deck(request, pk):
         deck.delete()
         return redirect('list_decks')
     return render(request, 'confirm_delete.html', {'deck': deck})
+
+
+@login_required
+def study(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    cards = list(Card.objects.filter(deck=deck))
+
+    shuffle(cards)
+    shuffled_cards = cards
+
+    used_cards = []
+
+    card = rand.choice(shuffled_cards)
+
+    if card in used_cards:
+        pass
+    used_cards.append(card)
+    shuffled_cards.remove(card)
+
+    context = {
+        'card': card,
+        'cards': cards,
+        'deck': deck,
+    }
+
+    print(shuffled_cards)
+    print(f'selected card is: {card}')
+
+    return render(request, 'study.html', context)
