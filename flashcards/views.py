@@ -60,7 +60,13 @@ def create_card(request, pk):
             return redirect('deck_details', pk=deck.pk)
     else:
         form = CardForm()
-    return render(request, "edit_card.html", {'form': form})
+
+    breakpoint()
+    context = {
+        'form': form,
+        'deck': deck,
+    }
+    return render(request, "edit_card.html", context)
 
 
 @login_required
@@ -79,8 +85,9 @@ def edit_card(request, pk):
     context = {
         'form': form,
         'card': card,
+        'pk': deck_id,
     }
-
+    
     return render(request, 'edit_card.html', context)
 
 

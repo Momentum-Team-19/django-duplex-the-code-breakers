@@ -32,9 +32,15 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
-            <a class="footerOption" href="{% url 'card_details' card.pk %}">
+            {% if card %}
+            <a class="footerOption" href="{% url 'cards_list' %}">
                 <p class="footerOptionText">Cancel</p>
             </a>
+            {% else %}
+            <a class="footerOption" href="{% url 'deck_details' deck.pk %}">
+                <p class="footerOptionText">Cancel</p>
+            </a>
+            {% endif %}
             <a class="footerOption" href="{% url 'homepage' %}">
                 <p class="footerOptionText">Home</p>
             </a>

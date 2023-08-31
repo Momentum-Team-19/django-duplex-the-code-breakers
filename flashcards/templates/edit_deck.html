@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
-    <title>{% if form.instance.pk %}Edit Deck{% else %}New Deck{% endif %}</title>
+    <title>flashcards</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
-            <a class="footerOption" href="{% url 'deck_details' deck.pk %}">
+            <a class="footerOption" href="{% url 'list_decks' %}">
                 <p class="footerOptionText">Cancel</p>
             </a>
             <a class="footerOption" href="{% url 'homepage' %}">

@@ -31,6 +31,11 @@ class Card(models.Model):
     prompt = models.CharField(max_length=200)
     hint = models.CharField(max_length=200, blank=True, null=True)
     answer = models.CharField(max_length=200)
+    correct = models.BooleanField(default=False)
 
     def __str__(self):
         return self.prompt
+    
+    def correct(self):
+        pass
+
