@@ -28,6 +28,19 @@
     transition: box-shadow 0.1s, background-color 0.1s, transform 0.1s;
 }
 
+.hintToggle:hover {
+    transform: scale(120%);
+    opacity: .6;
+    transition: transform .2s, opacity .2s;
+}
+
+.hintToggle:active {
+    transform: translate(-2px);
+    transform: scale(90%);
+    opacity: 1;
+    transition: translate .2s, transform .2s, opacity .2s;
+}
+
 .correctBox:hover {
     background: linear-gradient(140deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.3));
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -57,6 +70,7 @@
     transform: translateY(1px);
     transition: box-shadow 0.1s, background-color 0.1s, transform 0.1s;
 }
+
 
 .cardBox:hover {
     background: linear-gradient(140deg, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.3));

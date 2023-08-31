@@ -327,9 +327,141 @@ header {
     color: var(--clr-text2);
 }
 
+.studyContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+}
+
+.promptBox {
+    width: 35%;
+    background-color: var(--clr-secondary);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+    padding: 3%;
+}
+
+.promptTitleBox {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.promptTitleText {
+    font-family: "Arial", sans-serif;
+    font-size: 140%;
+    font-weight: bold;
+    color: var(--clr-text1);
+    cursor: default;
+}
+
+.answerBox {
+    /* DISPLAY NONE THEN JS TOGGLE */
+    display: none;
+    width: 35%;
+    background-color: var(--clr-secondary);
+    border-radius: 10%;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 1%;
+    padding: 3%;
+}
+
+.answerTitleBox {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.answerTitleText {
+    font-family: "Arial", sans-serif;
+    font-size: 140%;
+    font-weight: bold;
+    color: var(--clr-text1);
+    cursor: default;
+}
+
+.hintOptionContainer {
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+}
+
+.hintToggle {
+    position: absolute;
+    top: 0px;
+    right: -42px;
+    cursor: pointer;
+    opacity: .2;
+    transition: transform .8s ease;
+    width: 20px;
+    color: var(--clr-text3);
+}
+
+.hintOptionText {
+    font-family: "Arial", sans-serif;
+    font-size: 100%;
+    cursor: default;
+}
+
+.hintContainer {
+    /* DISPLAY NONE THEN JS TOGGLE */
+    display: none;
+    justify-content: center;
+    margin: 1%;
+}
+
+.hintOption {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hintColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hintBox {
+    max-width: 50%;
+    min-width: 30%;
+    border: 1px solid var(--clr-secondary);
+    /* background-color: var(--clr-text4); */
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.hintTitleBox {
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.hintTitleText {
+    font-family: "Arial", sans-serif;
+    font-size: 100%;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--clr-lighter);
+    margin-top: 5px;
+    cursor: default;
+}
+
 .buttonsContainer {
     display: flex;
     justify-content: center;
+    margin-bottom: 2.5%;
 }
 
 .buttonsBox {
@@ -345,7 +477,6 @@ header {
     padding-top: 2%;
     padding-bottom: 2%;
     margin: 5%;
-    margin-bottom: 15px;
 }
 
 .correctBox {
@@ -356,7 +487,6 @@ header {
     padding-top: 2%;
     padding-bottom: 2%;
     margin: 5%;
-    margin-bottom: 15px;
 }
 
 .buttonToggle {

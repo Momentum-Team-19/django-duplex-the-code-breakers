@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'toggle-hint.js' %}" defer></script>
+    <script src="{% static 'toggle-answer.js' %}" defer></script>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
@@ -22,18 +24,32 @@
         </a>
     </header>
 
-    <div class="detailsContainer">
-        <div class="detailsBox">
-            <div class="columnBox">
-                <div class="titleBox">
-                    <p class="titleText">{{ card.prompt }}</p>
-                </div>
-                <!-- <div class="hintBox">
-                    <p class="hintText">*{{ card.hint }}*</p>
-                </div>
-                <div class="descBox">
-                    <p class="descText">{{ card.answer }}</p>
-                </div> -->
+    <div class="studyContainer">
+        <div id="promptBox" class="promptBox">
+            <div class="promptTitleBox">
+                <p class="promptTitleText">{{ card.prompt }}</p>
+            </div>
+        </div>
+        <div id="answerBox" class="answerBox">
+            <div class="answerTitleBox">
+                <p class="answerTitleText">{{ card.answer }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hintOptionContainer">
+        <div class="hintOption">
+            <div class="hintColumn">
+                <h1 id="hintToggle" class="hintToggle">^</h1>
+                <p class="hintOptionText">Do you want a hint?</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="hintContainer" class="hintContainer">
+        <div class="hintBox">
+            <div class="hintTitleBox">
+                <p class="hintTitleText">* {{ card.hint }} *</p>
             </div>
         </div>
     </div>
