@@ -35,4 +35,5 @@ urlpatterns = [
     path('deck/edit/<int:pk>', views.edit_deck, name='edit_deck'),
     path('card/edit/<int:pk>', views.edit_card, name='edit_card'),
     path('deck/study/<int:pk>', views.study, name='study'),
+    path('correct/<int:pk>/', views.toggle_correct, name='toggle_correct'),
 ]

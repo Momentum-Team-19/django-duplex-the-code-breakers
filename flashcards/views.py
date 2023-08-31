@@ -5,6 +5,7 @@ from .models import Deck, Card
 from .forms import DeckForm, CardForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from random import shuffle
 import random as rand
 
@@ -193,17 +194,11 @@ def delete_card(request, pk):
 @login_required
 def study(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
-    cards = list(Card.objects.filter(deck=deck)) # <= add filter for 'card.correct = False'
+    cards = list(Card.objects.filter(deck=deck).filter(correct=False))
 
     shuffle(cards)
 
     card = rand.choice(cards)
-
-    if card.correct is True:
-        pass
-
-    # need 2 buttons, if 'correct' button pressed, => mark card (correct = True), if 'not true' is pressed, => refresh
-    # card.save(correct = True)
 
     context = {
         'card': card,
@@ -215,3 +210,24 @@ def study(request, pk):
     print(f'selected card is: {card}')
 
     return render(request, 'study.html', context)
+
+
+@login_required
+def toggle_correct(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+
+    card.correct = True
+    card.save()
+
+    return study(request, pk=card.deck_id)
+
+
+@login_required
+def refresh_deck(request, pk):
+    cards = Card.objects.filter(deck=pk)
+
+    for card in cards:
+        card.correct = False
+        card.save()
+
+    return study(request, pk=card.deck_id)

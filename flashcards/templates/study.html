@@ -40,18 +40,20 @@
 
     <div class="buttonsContainer">
         <div class="buttonsBox">
-            <a class="buttonBox" href="{% url 'study' deck.pk %}">
+            <a class="incorrectBox" href="{% url 'study' deck.pk %}">
                 <div class="buttonToggle">
                     <p class="incorrectText">Incorrect</p>
                 </div>
                 </av>
-                <a class="buttonBox" href="{% url 'study' deck.pk %}">
+                <a class="correctBox" href="{% url 'toggle_correct' card.pk %}">
                     <div class="buttonToggle">
                         <p class="correctText">Correct</p>
                     </div>
                 </a>
         </div>
     </div>
+
+    <!-- need a button to reveal the answer -->
 
     <div class="footerContainer">
         <div class="footerOptions">
@@ -69,6 +71,10 @@
             </a>
         </div>
     </div>
+
+    <script>
+        const toggleCorrectUrl = "{% url 'toggle_correct' card.pk %}"
+    </script>
 </body>
 
 </html>

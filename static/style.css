@@ -337,7 +337,18 @@ header {
     justify-content: center;
 }
 
-.buttonBox {
+.incorrectBox {
+    text-decoration: none;
+    width: 95px;
+    background-color: var(--clr-secondary);
+    border-radius: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 5%;
+    margin-bottom: 15px;
+}
+
+.correctBox {
     text-decoration: none;
     width: 95px;
     background-color: var(--clr-secondary);
