@@ -14,12 +14,17 @@
 
 <body>
     <header>
-        <h1 class="pageName">Login</h1>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">Login</h3>
+            </div>
+        </a>
     </header>
 
-    <div class="createContainer">
-        <div class="confirmBox">
-            <div class="confirmForm">
+    <div class="loginContainer">
+        <div class="loginBox">
+            <div class="loginForm">
                 {% block content %}
                 {% endblock %}
             </div>
@@ -29,7 +34,7 @@
     <div class="footerContainer">
         <div class="footerOptions">
             <a class="footerOption" href="{% url 'homepage' %}">
-                <div class="footerText">Home</div>
+                <div class="footerText">Cancel</div>
             </a>
         </div>
     </div>

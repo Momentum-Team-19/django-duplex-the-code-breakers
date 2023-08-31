@@ -14,7 +14,12 @@
 
 <body>
     <header>
-        <h1 class="pageName">{% if form.instance.pk %}Edit Deck{% else %}New Deck{% endif %}</h1>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">{% if form.instance.pk %}Edit Deck{% else %}New Deck{% endif %}</h3>
+            </div>
+        </a>
     </header>
 
     <div class="createContainer">
@@ -27,7 +32,7 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
-            <a class="footerOption" href="{% url 'list_decks' %}">
+            <a class="footerOption" href="{% url 'deck_details' deck.pk %}">
                 <p class="footerOptionText">Cancel</p>
             </a>
             <a class="footerOption" href="{% url 'homepage' %}">

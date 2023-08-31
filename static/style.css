@@ -42,6 +42,23 @@ header {
     margin-bottom: 10px;
 }
 
+.pageLink {
+    text-decoration: none;
+}
+
+.pageName {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    color: var(--clr-light);
+}
+
+.pageTitle {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    color: var(--clr-text1);
+    padding-top: 2%;
+}
+
 .createContainer {
     display: flex;
     justify-content: center;
@@ -55,7 +72,7 @@ header {
     border-radius: 5%;
     padding: 2%;
     margin: 8px;
-    width: 40%;
+    width: 360px;
     min-width: 228px;
     font-family: "Arial", sans-serif;
     font-size: 16px;
@@ -129,15 +146,30 @@ header {
     color: var(--clr-text1);
 }
 
-.pageName {
-    font-family: "Arial", sans-serif;
-    text-align: center;
-    color: var(--clr-light);
-    cursor: default;
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .loginBox {
-    color: var(--clr-light);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-secondary);
+    border-radius: 5%;
+    padding: 2%;
+    margin: 8px;
+    width: 360px;
+    height: 150px;
+    min-width: 228px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: var(--clr-text1);
+}
+
+.loginForm {
+    margin-top: 1%;
 }
 
 .container {
