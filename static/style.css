@@ -327,6 +327,46 @@ header {
     color: var(--clr-text2);
 }
 
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonsBox {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonBox {
+    text-decoration: none;
+    width: 95px;
+    background-color: var(--clr-secondary);
+    border-radius: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 5%;
+    margin-bottom: 15px;
+}
+
+.buttonToggle {
+    display: flex;
+    justify-content: center;
+}
+
+.incorrectText {
+    justify-content: center;
+    font-family: "Arial", sans-serif;
+    font-size: 100%;
+    color: red;
+}
+
+.correctText {
+    justify-content: center;
+    font-family: "Arial", sans-serif;
+    font-size: 100%;
+    color: green;
+}
+
 .footerContainer {
     display: flex;
     justify-content: center;

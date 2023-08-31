@@ -205,15 +205,13 @@ def study(request, pk):
     # need 2 buttons, if 'correct' button pressed, => mark card (correct = True), if 'not true' is pressed, => refresh
     # card.save(correct = True)
 
-    shuffled_cards.remove(card)
-
     context = {
         'card': card,
         'cards': cards,
         'deck': deck,
     }
 
-    print(shuffled_cards)
+    print(cards)
     print(f'selected card is: {card}')
 
     return render(request, 'study.html', context)

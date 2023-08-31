@@ -38,6 +38,21 @@
         </div>
     </div>
 
+    <div class="buttonsContainer">
+        <div class="buttonsBox">
+            <a class="buttonBox" href="{% url 'study' deck.pk %}">
+                <div class="buttonToggle">
+                    <p class="incorrectText">Incorrect</p>
+                </div>
+                </av>
+                <a class="buttonBox" href="{% url 'study' deck.pk %}">
+                    <div class="buttonToggle">
+                        <p class="correctText">Correct</p>
+                    </div>
+                </a>
+        </div>
+    </div>
+
     <div class="footerContainer">
         <div class="footerOptions">
             <a class="footerOption" href="{% url 'study' deck.pk %}">
