@@ -49,6 +49,9 @@
             <a class="footerOption" href="{% url 'list_decks' %}">
                 <div class="footerText">All Decks</div>
             </a>
+            <a class="footerOption" href="{% url 'study' deck.pk %}">
+                <p class="footerOptionText">Study</p>
+            </a>
             <a class="footerOption" href="{% url 'homepage' %}">
                 <div class="footerText">Home</div>
             </a>
