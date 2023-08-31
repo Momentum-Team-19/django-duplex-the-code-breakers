@@ -61,7 +61,6 @@ def create_card(request, pk):
     else:
         form = CardForm()
 
-    breakpoint()
     context = {
         'form': form,
         'deck': deck,
@@ -194,18 +193,18 @@ def delete_card(request, pk):
 @login_required
 def study(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
-    cards = list(Card.objects.filter(deck=deck))
+    cards = list(Card.objects.filter(deck=deck)) # <= add filter for 'card.correct = False'
 
     shuffle(cards)
-    shuffled_cards = cards
 
-    used_cards = []
+    card = rand.choice(cards)
 
-    card = rand.choice(shuffled_cards)
-
-    if card in used_cards:
+    if card.correct is True:
         pass
-    used_cards.append(card)
+
+    # need 2 buttons, if 'correct' button pressed, => mark card (correct = True), if 'not true' is pressed, => refresh
+    # card.save(correct = True)
+
     shuffled_cards.remove(card)
 
     context = {

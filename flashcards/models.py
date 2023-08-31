@@ -35,7 +35,7 @@ class Card(models.Model):
 
     def __str__(self):
         return self.prompt
-    
-    def correct(self):
-        pass
 
+    # def mark_correct(self):
+    #     pass
+    # 
