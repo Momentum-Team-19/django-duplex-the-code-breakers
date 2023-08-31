@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
-    <title>Study!</title>
+    <title>flashcards</title>
 </head>
 
 <body>
@@ -35,6 +35,9 @@
 
     <div class="footerContainer">
         <div class="footerOptions">
+            <a class="footerOption" href="{% url 'study' deck.pk %}">
+                <p class="footerOptionText">Refresh</p>
+            </a>
             <a class="footerOption" href="{% url 'deck_details' deck.pk %}">
                 <p class="footerOptionText">Back to Deck</p>
             </a>

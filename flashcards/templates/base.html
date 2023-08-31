@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
-    <title>Login</title>
+    <title>flashcards</title>
 </head>
 
 <body>
@@ -17,10 +17,20 @@
         <h1 class="pageName">Login</h1>
     </header>
 
-    <div class="loginContainer">
-        <div class="loginBox">
-            {% block content %}
-            {% endblock %}
+    <div class="createContainer">
+        <div class="confirmBox">
+            <div class="confirmForm">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Home</div>
+            </a>
         </div>
     </div>
 </body>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
-    <title>Delete?</title>
+    <title>flashcards</title>
 </head>
 
 <body>
@@ -17,11 +17,11 @@
         <h1 class="pageName">Confirm Delete</h1>
     </header>
 
-    <div class="container">
-        <div class="deckEdit">
-            <form class="deleteConfirm" method="post">
+    <div class="createContainer">
+        <div class="confirmBox">
+            <form class="confirmForm" method="post">
                 {% csrf_token %}
-                <p class=" deleteText">Confirm Delete?</p>
+                <p class="deleteText">Confirm Delete?</p>
                 <button class="confirmButton" type="submit">Confirm</button>
             </form>
         </div>

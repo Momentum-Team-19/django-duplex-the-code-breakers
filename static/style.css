@@ -62,6 +62,26 @@ header {
     color: var(--clr-text1);
 }
 
+.confirmBox {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-secondary);
+    border-radius: 5%;
+    padding: 2%;
+    margin: 8px;
+    width: 38%;
+    height: 150px;
+    min-width: 228px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: var(--clr-text1);
+}
+
+.confirmForm {
+    margin-top: 4.8%;
+}
+
 .saveButton {
     height: 40px;
     padding: 10px 25px;
@@ -72,6 +92,24 @@ header {
     border-radius: 20px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.deleteText {
+    font-family: "Arial", sans-serif;
+    font-size: 120%;
+    color: var(--clr-text3);
+}
+
+.confirmButton {
+    height: 40px;
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
 }
 
 .albumEdit {

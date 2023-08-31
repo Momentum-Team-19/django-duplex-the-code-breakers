@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'stylefx.css' %}">
     <link rel="shortcut icon" href="#">
-    <title>Deck Details</title>
+    <title>flashcards</title>
 </head>
 
 <body>
@@ -41,8 +41,8 @@
             <a class="footerOption" href="{% url 'deck_delete' deck.pk %}">
                 <p class="footerOptionText">Delete Deck</p>
             </a>
-            <a class="footerOption" href="{% url 'list_decks' %}">
-                <p class="footerOptionText">Study(broken)</p>
+            <a class="footerOption" href="{% url 'study' deck.pk %}">
+                <p class="footerOptionText">Study</p>
             </a>
             <a class="footerOption" href="{% url 'list_cards' deck.pk %}">
                 <p class="footerOptionText">Cards</p>
