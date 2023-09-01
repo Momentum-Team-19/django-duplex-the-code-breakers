@@ -1,0 +1,96 @@
+<!--study.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'toggle-hint.js' %}" defer></script>
+    <script src="{% static 'toggle-answer.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>flashcards</title>
+</head>
+
+<body>
+    <header>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">Study</h3>
+            </div>
+        </a>
+    </header>
+
+    <div class="studyContainer">
+        <div id="promptBox" class="promptBox">
+            <div class="promptTitleBox">
+                <p class="promptTitleText">{{ card.prompt }}</p>
+            </div>
+        </div>
+        <div id="answerBox" class="answerBox">
+            <div class="answerTitleBox">
+                <p class="answerTitleText">{{ card.answer }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hintOptionContainer">
+        <div class="hintOption">
+            <div class="hintColumn">
+                <h1 id="hintToggle" class="hintToggle">^</h1>
+                <p class="hintOptionText">Do you want a hint?</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="hintContainer" class="hintContainer">
+        <div class="hintBox">
+            <div class="hintTitleBox">
+                <p class="hintTitleText">* {{ card.hint }} *</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttonsContainer">
+        <div class="buttonsBox">
+            <a class="incorrectBox" href="{% url 'study' deck.pk %}">
+                <div class="buttonToggle">
+                    <p class="incorrectText">Incorrect</p>
+                </div>
+                </av>
+                <a class="correctBox" href="{% url 'toggle_correct' card.pk %}">
+                    <div class="buttonToggle">
+                        <p class="correctText">Correct</p>
+                    </div>
+                </a>
+        </div>
+    </div>
+
+    <!-- need a button to reveal the answer -->
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'study' deck.pk %}">
+                <p class="footerOptionText">Refresh</p>
+            </a>
+            <a class="footerOption" href="{% url 'deck_details' deck.pk %}">
+                <p class="footerOptionText">Back to Deck</p>
+            </a>
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <p class="footerOptionText">All Decks</p>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <p class="footerOptionText">Home</p>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const toggleCorrectUrl = "{% url 'toggle_correct' card.pk %}"
+    </script>
+</body>
+
+</html>

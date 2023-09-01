@@ -1,0 +1,43 @@
+<!--base.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>flashcards</title>
+</head>
+
+<body>
+    <header>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">Login</h3>
+            </div>
+        </a>
+    </header>
+
+    <div class="loginContainer">
+        <div class="loginBox">
+            <div class="loginForm">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Cancel</div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

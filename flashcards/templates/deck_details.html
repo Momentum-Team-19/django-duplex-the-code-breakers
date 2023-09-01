@@ -1,0 +1,65 @@
+<!--deck_details.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>flashcards</title>
+</head>
+
+<body>
+    <header>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">Deck Details</h3>
+            </div>
+        </a>
+    </header>
+
+    <div class="detailsContainer">
+        <div class="detailsBox">
+            <div class="columnBox">
+                <div class="titleBox">
+                    <p class="titleText">{{ deck.title }}</p>
+                </div>
+                <div class="descBox">
+                    <p class="descText">{{ deck.desc }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'create_card' deck.pk %}">
+                <p class="footerOptionText">New Card</p>
+            </a>
+            <a class="footerOption" href="{% url 'edit_deck' deck.pk %}">
+                <p class="footerOptionText">Edit Deck</p>
+            </a>
+            <a class="footerOption" href="{% url 'deck_delete' deck.pk %}">
+                <p class="footerOptionText">Delete Deck</p>
+            </a>
+            <a class="footerOption" href="{% url 'study' deck.pk %}">
+                <p class="footerOptionText">Study</p>
+            </a>
+            <a class="footerOption" href="{% url 'list_cards' deck.pk %}">
+                <p class="footerOptionText">Cards</p>
+            </a>
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <p class="footerOptionText">Decks</p>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <p class="footerOptionText">Home</p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

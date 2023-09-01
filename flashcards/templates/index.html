@@ -1,0 +1,51 @@
+<!--index.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
+    <title>flashcards</title>
+</head>
+<header>
+    <a class="pageLink" href="{% url 'homepage' %}">
+        <div class="pageText">
+            <h1 class="pageName">flashcards</h1>
+            <h3 class="pageTitle">Home</h3>
+        </div>
+    </a>
+</header>
+
+<body>
+    <div class="container">
+        <a class="indexOption" href="{% url 'list_decks' %}">
+            <p class="indexOptionText">Decks</p>
+        </a>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <!-- <a class="homeOption" href="accounts/login">
+                <div class="homeOptionText">Login</div>
+            </a>
+            <a class="homeOption" href="accounts/logout">
+                <div class="homeOptionText">Logout</div>
+            </a> -->
+            {% if user.is_authenticated %}
+            <a class="footerOption" href="accounts/logout">
+                <div class="footerOptionText">Logout</div>
+            </a>
+            {% else %}
+            <a class="footerOption" href="accounts/login">
+                <div class="footerOptionText">Login</div>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

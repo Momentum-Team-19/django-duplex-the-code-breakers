@@ -1,0 +1,63 @@
+<!--cards_list.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>flashcards</title>
+</head>
+
+<body>
+    <header>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">Cards</h3>
+            </div>
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="container80">
+            {% if cards %}
+            {% for card in cards %}
+            <a class="cardBox" href="{% url 'card_details' card.pk %}">
+                <div class="cardDetailBox">
+                    <p class="cardPrompt">{{ card.prompt }}</p>
+                </div>
+            </a>
+            {% endfor %}
+            {% else %}
+            <p class="noneMessage">{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'create_card' deck.pk %}">
+                <p class="footerOptionText">New Card</p>
+            </a>
+            <a class="footerOption" href="{% url 'deck_details' deck.pk %}">
+                <p class="footerOptionText">Back to Deck</p>
+            </a>
+            <a class="footerOption" href="{% url 'list_decks' %}">
+                <div class="footerText">All Decks</div>
+            </a>
+            <a class="footerOption" href="{% url 'study' deck.pk %}">
+                <p class="footerOptionText">Study</p>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Home</div>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

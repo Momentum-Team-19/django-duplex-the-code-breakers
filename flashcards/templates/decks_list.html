@@ -1,0 +1,53 @@
+<!--decks_list.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stylefx.css' %}">
+    <link rel="shortcut icon" href="#">
+    <title>flashcards</title>
+</head>
+
+<body>
+    <header>
+        <a class="pageLink" href="{% url 'homepage' %}">
+            <div class="pageText">
+                <h1 class="pageName">flashcards</h1>
+                <h3 class="pageTitle">Decks</h3>
+            </div>
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="container80">
+            {% if decks %}
+            {% for deck in decks %}
+            <a class="deckBox" href="{% url 'deck_details' deck.pk %}">
+                <div class="detailBox">
+                    <p class="deckTitle">{{ deck.title }}</p>
+                </div>
+            </a>
+            {% endfor %}
+            {% else %}
+            <p class="noneMessage">{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerOptions">
+            <a class="footerOption" href="{% url 'create_deck' %}">
+                <div class="footerText">New Deck</div>
+            </a>
+            <a class="footerOption" href="{% url 'homepage' %}">
+                <div class="footerText">Home</div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
