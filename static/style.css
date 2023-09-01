@@ -266,7 +266,7 @@ header {
     color: var(--clr-text1);
 }
 
-.hintBox {
+.hintDetailBox {
     padding-bottom: 5px;
     display: flex;
     justify-content: center;
@@ -381,7 +381,7 @@ header {
 }
 
 .answerBox {
-    /* DISPLAY NONE THEN JS TOGGLE */
+    /* DISPLAY NONE => JS TOGGLE */
     display: none;
     width: 200px;
     background-color: var(--clr-secondary);
@@ -435,7 +435,7 @@ header {
 }
 
 .hintContainer {
-    /* DISPLAY NONE THEN JS TOGGLE */
+    /* DISPLAY NONE => JS TOGGLE */
     display: none;
     justify-content: center;
     margin: 1%;
@@ -457,7 +457,6 @@ header {
     max-width: 50%;
     min-width: 30%;
     border: 1px solid var(--clr-secondary);
-    /* background-color: var(--clr-text4); */
     border-radius: 10%;
     display: flex;
     justify-content: center;
