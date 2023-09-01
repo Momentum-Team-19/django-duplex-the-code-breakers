@@ -206,9 +206,6 @@ def study(request, pk):
         'deck': deck,
     }
 
-    print(cards)
-    print(f'selected card is: {card}')
-
     return render(request, 'study.html', context)
 
 

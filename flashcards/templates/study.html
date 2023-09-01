@@ -25,9 +25,12 @@
     </header>
 
     <div class="studyContainer">
-        <div id="promptBox" class="promptBox">
-            <div class="promptTitleBox">
-                <p class="promptTitleText">{{ card.prompt }}</p>
+        <div class="promptContainer">
+            <div id="promptBox" class="promptBox">
+                <div class="promptTitleBox">
+                    <p class="promptTitleText">{{ card.prompt }}</p>
+                </div>
+                <p class="clickToReveal">* click to reveal *</p>
             </div>
         </div>
         <div id="answerBox" class="answerBox">
@@ -56,16 +59,16 @@
 
     <div class="buttonsContainer">
         <div class="buttonsBox">
+            <a class="correctBox" href="{% url 'toggle_correct' card.pk %}">
+                <div class="buttonToggle">
+                    <p class="correctText">Correct</p>
+                </div>
+            </a>
             <a class="incorrectBox" href="{% url 'study' deck.pk %}">
                 <div class="buttonToggle">
                     <p class="incorrectText">Incorrect</p>
                 </div>
-                </av>
-                <a class="correctBox" href="{% url 'toggle_correct' card.pk %}">
-                    <div class="buttonToggle">
-                        <p class="correctText">Correct</p>
-                    </div>
-                </a>
+            </a>
         </div>
     </div>
 
