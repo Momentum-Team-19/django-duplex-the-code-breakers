@@ -36,5 +36,5 @@ urlpatterns = [
     path('card/edit/<int:pk>', views.edit_card, name='edit_card'),
     path('deck/study/<int:pk>', views.study, name='study'),
     path('correct/<int:pk>/', views.toggle_correct, name='toggle_correct'),
-    path('deck/studyagain/', views.study, name='study_again'),
+    path('deck/study/again/', views.refresh_deck, name='study_again'),
 ]

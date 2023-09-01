@@ -532,6 +532,48 @@ header {
     color: green;
 }
 
+.studyAgainContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.studyAgainBox {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-secondary);
+    border-radius: 5%;
+    padding: 2%;
+    margin: 8px;
+    width: 360px;
+    height: 150px;
+    min-width: 228px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    color: var(--clr-text1);
+}
+
+.yesButton {
+    height: 40px;
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+.studyAbainOption {
+    border-radius: 5%;
+    text-decoration: none;
+    width: 22%;
+    margin: 1%;
+}
+
 .footerContainer {
     display: flex;
     justify-content: center;

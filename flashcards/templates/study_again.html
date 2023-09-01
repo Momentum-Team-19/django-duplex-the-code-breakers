@@ -22,11 +22,14 @@
         </a>
     </header>
 
-    <div class="loginContainer">
-        <div class="loginBox">
-            <a class="footerOption" href="{% url 'study' deck.pk %}">
-                <p class="footerOptionText">Do you want to study Again?</p>
-            </a>
+    <div class="studyAgainContainer">
+        <div class="studyAgainBox">
+            <div class="studyAgainOption">
+                <p class="studyAgainText">Do you want to study Again?</p>
+            </div>
+            <div>
+                <a class="yesButton" href="{% url 'study' deck.pk %}">Yes</a>
+            </div>
         </div>
     </div>
 
