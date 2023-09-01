@@ -218,6 +218,8 @@ def toggle_correct(request, pk):
 
     card.correct = True
     card.save()
+    if all(card.correct for card in Card.objects.filter(deck=card.deck_id)):
+        return refresh_deck(request, card.deck_id)
 
     return study(request, pk=card.deck_id)
 
@@ -225,9 +227,15 @@ def toggle_correct(request, pk):
 @login_required
 def refresh_deck(request, pk):
     cards = Card.objects.filter(deck=pk)
+    deck = get_object_or_404(Deck, pk=pk)
+
+    context = {
+        'cards': cards,
+        'deck': deck,
+    }
 
     for card in cards:
         card.correct = False
         card.save()
 
-    return study(request, pk=card.deck_id)
+    return render(request, 'study_again.html', context)
